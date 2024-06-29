@@ -7,14 +7,14 @@ export const TodoApp = () => {
     // useTodo
     // todos, handleDeleteTodo, handleToggleTodo, handleNewTodo
 
-    const {todos, handleDeleteTodo, handleToggleTodo, handleNewTodo} = useTodo();
+    const {todos, todosCount, pendingTodosCount, handleDeleteTodo, handleToggleTodo, handleNewTodo} = useTodo();
 
     return (
         <>
-            <h1>ToDo: {todos.length} 📋</h1>
+            <h1>ToDo: {todosCount} 📋</h1>
             <h2 className="fs-5">
-                pendientes: {todos.filter(todo => !todo.done).length}
-                {todos.filter(todo => !todo.done).length === 0 ? ' 😁' : ' 👀'}
+                pendientes: {pendingTodosCount}
+                {pendingTodosCount === 0 ? ' 😁' : ' 👀'}
             </h2>
             <hr />
 
