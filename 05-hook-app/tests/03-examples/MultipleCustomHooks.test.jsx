@@ -57,9 +57,7 @@ describe('test on <MultipleCustomHooks />', () => {
         const img = screen.getByRole('img', { name: /bulbasaur/i });
         expect(img).toBeTruthy();
         expect(img.src).toBe('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png');
-        
-        
-        screen.debug();
+        // screen.debug();
 
     });
 
