@@ -33,9 +33,38 @@ describe('Test on useCounter', () => {
 
         act(() => {
             increment();
+            increment(2);
         });
 
-        expect(result.current.counter).toBe(11);
+        expect(result.current.counter).toBe(13);
+
+    });
+
+    test('should decrement the counter', () => {
+
+        const { result } = renderHook(() => useCounter());
+        const { counter, decrement } = result.current;
+
+        act(() => {
+            decrement();
+            decrement(2);
+        });
+
+        expect(result.current.counter).toBe(7);
+
+    });
+
+    test('should reset the counter', () => {
+
+        const { result } = renderHook(() => useCounter(10));
+        const { counter, increment, reset } = result.current;
+
+        act(() => {
+            increment();
+            reset();
+        });
+
+        expect(result.current.counter).toBe(10);
 
     });
 
