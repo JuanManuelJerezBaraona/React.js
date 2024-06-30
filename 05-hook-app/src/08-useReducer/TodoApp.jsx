@@ -4,9 +4,6 @@ import { useTodo } from "../hooks";
 
 export const TodoApp = () => {
 
-    // useTodo
-    // todos, handleDeleteTodo, handleToggleTodo, handleNewTodo
-
     const {todos, todosCount, pendingTodosCount, handleDeleteTodo, handleToggleTodo, handleNewTodo} = useTodo();
 
     return (
